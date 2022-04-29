@@ -20,23 +20,27 @@ namespace DiceGame
 
             Console.WriteLine("user vs computer");
 
-            rnd Random = Random();
+            Random rnd = new Random();
+            int userThrow;
+            int cpuThrow;
 
-            char userThrow = rnd.Next(1, 6);
-            string cpuThrow = rnd.Next(1, 6);
+            userThrow = rnd.Next(1, 7);
+            cpuThrow = rnd.Next(1, 7);
 
-            if (userThrow > cpuThrow) ;
+            Console.WriteLine($"User number is: {userThrow}");
+            Console.WriteLine($"PC number is:{cpuThrow}");
+            if (userThrow < cpuThrow)
             {
-                Console.WriteLine("Победил пользователь");
+                Console.WriteLine("PC Win!");
             }
-            
-            if(userThrow >= cpuThrow)
+
+            if (userThrow > cpuThrow)
             {
-                Console.WriteLine("Победил пользователь");
+                Console.WriteLine("User Win!");
             }
-            else if(userThrow = cpuThrow)
+            else if (userThrow == cpuThrow)
             {
-                Console.WriteLine("Ничья");
+                Console.WriteLine("Nobody has won!");
             }
 
         }

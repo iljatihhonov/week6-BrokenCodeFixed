@@ -19,7 +19,7 @@ namespace DiceGameThreeThrowsForLoop
 
             Console.WriteLine("user vs computer");
 
-            rnd Random = Random();
+            Random rnd = new Random();
 
             int userThrow;
             int cpuThrow;
@@ -27,37 +27,58 @@ namespace DiceGameThreeThrowsForLoop
             int userScore = 0;
             int cpuScore = 0;
 
-            for(int i = 0; i > 3; i++)
-            {
-                userThrow= rnd.Next(1, 6);
-                cpuThrow = rnd.Next(1, 6);
 
-                if (userThrow > cpuThrow)
+            for (int i = 0; i < 3; i++)
+
+
+
+            {
+                userThrow = rnd.Next(1, 7);
+                cpuThrow = rnd.Next(1, 7);
+                Console.WriteLine($"User number is: {userThrow}");
+                Console.WriteLine($"PC number is:{cpuThrow}");
+
+                if (userThrow < cpuThrow)
                 {
                     cpuScore++;
-                } 
-                else if(userThrow < cpuThrow)
+
+                }
+                else if (userThrow > cpuThrow)
                 {
                     userScore++;
+
                 }
                 else
                 {
                     continue;   //этот блок просто сообщит коду, продолжать работу, если пользователь и компьюьер
                                 //выбросят одинаковое значение, эта часть не нуждается в исправлении
                 }
+
+
+
+                if (cpuScore > userScore)
+                {
+                    Console.WriteLine("PC is Win!");//эта строка не подлежит правке
+
+                }
+
+                else if (userScore > cpuScore)
+                {
+                    Console.WriteLine("User is Win!"); //эта строка не подлежит правке
+
+                }
+
+
+                else
+                {
+                    Console.WriteLine("Nobody has Won!");
+                }
+
+
             }
 
 
-            if (cpuScore > userThrow)
-            {
-                Console.WriteLine("компьютер победели");//эта строка не подлежит правке
-            }
-            else if (userThrow < cpuScore) ;
-            {
-                Console.WriteLine("пользователь победил"); //эта строка не подлежит правке
-            } else if {
-                Console.WriteLine("ничья");
-            }
+
         }
     }
 }

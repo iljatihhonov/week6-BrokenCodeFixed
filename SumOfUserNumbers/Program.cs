@@ -11,14 +11,16 @@ namespace SumOfUserNumbers
             //приложение предлагает пользователю ввести три числа и выводит на экран их сумму
             //исправленный до рабочего состояния код дает до 5 пунктов 
 
-            int sum = 0;
+            int Sum = 0;
 
-            for (int i = 0; int i > 3; i++); {
-                Console.WriteLine("enter a number");
-                int sum = sum++;
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("enter a number:");
+                int numbers = Convert.ToInt32(Console.ReadLine());
+                Sum = Sum + numbers;
             }
 
-            Console.WriteLine(#"Total: {sum}");
+            Console.WriteLine($"Total: {Sum}");
         }
     }
 }
